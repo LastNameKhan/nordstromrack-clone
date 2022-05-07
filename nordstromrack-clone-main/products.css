@@ -1,0 +1,258 @@
+.leftbox {
+  /* border: 1px solid red; */
+  display: inline-block;
+}
+
+.leftbox ul {
+  display: flex;
+}
+
+.leftbox ul li:nth-child(1) {
+  margin-left: -20px;
+}
+
+.leftbox ul li {
+  list-style-type: none;
+  margin: 0 8px;
+  padding: 2%;
+}
+
+.leftbox ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+#nav {
+  width: 95%;
+  height: 151px;
+}
+
+.rightbox {
+  /* border: 1px solid red; */
+  width: 21%;
+  height: 22%;
+  margin-left: 85%;
+  position: relative;
+  top: -25%;
+  right: 1%;
+}
+
+.rightbox ul {
+  display: flex;
+}
+
+.rightbox ul li {
+  list-style-type: none;
+  margin: -3% 7% 0 0;
+}
+
+.rightbox ul li:nth-child(1) {
+  margin-left: 8%;
+}
+
+.rightbox ul li a {
+  text-decoration: none;
+  color: black;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.nav a {
+  color: #333;
+  /* margin-right: 5%; */
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+.nav > * {
+  color: red;
+}
+.signin {
+  margin-top: 5%;
+  line-height: 5px;
+  font-size: 2rem;
+
+  color: #393939;
+}
+
+.filter {
+  margin-top: 5%;
+  font-weight: 400;
+  margin-left: 20%;
+  gap: 3px;
+}
+
+#display {
+  width: 80%;
+  height: auto;
+
+  display: grid;
+  grid-template: "div div div div";
+  gap: 5px;
+  float: right;
+}
+
+#display > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-heading {
+  color: red;
+}
+
+.productImage {
+  width: 300px;
+  height: 500px;
+}
+
+.product_item_title {
+  cursor: pointer;
+}
+
+.newarrival {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 300;
+  text-align: start;
+}
+
+h4 a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+h4 a:hover {
+  color: #00819d;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.leftside {
+  max-width: 19%;
+  min-width: 19%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftside .newArrival h4 {
+  line-height: 0%;
+}
+
+.leftside .newArrival ul li {
+  line-height: 170%;
+}
+
+.leftside .newArrival ul li a {
+  color: black;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.leftside .newArrival ul li a:hover {
+  color: #00819d;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.newArrival h4 {
+  margin-left: 40px;
+}
+
+.newArrival ul {
+  margin-top: -1px;
+}
+
+.newArrival ul li {
+  list-style: none;
+}
+
+.newArrival ul li a {
+  text-decoration: none;
+}
+
+.newArrival ul li a :hover {
+  text-decoration: underline;
+}
+a:hover {
+  color: #00819d;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#sortings {
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  width: 150px;
+  height: 40px;
+}
+
+.filter,
+select,
+option:hover {
+  color: #00819d;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.footer {
+  margin-top: 10%;
+  height: 320px;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 3%;
+}
+
+.details {
+  height: 350px;
+  width: 100%;
+  /* border: 1px solid black; */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.first {
+  width: 100%;
+  margin-right: 10%;
+}
+
+.first li {
+  list-style-type: none;
+  margin: 12px -35px;
+}
+
+.first h6 {
+  margin: 2px 2px;
+  color: rgb(46, 45, 45);
+}
+
+.first li a {
+  text-decoration: none;
+  color: grey;
+  font-size: 13px;
+  /* margin-left: 5px; */
+}
+.download {
+  margin-left: 30px;
+  width: 350px;
+}
+
+.download h6 {
+  margin-left: 30px;
+  width: 300px;
+}
+.first li a:hover {
+  text-decoration: underline;
+  color: #3b9eb4;
+}
