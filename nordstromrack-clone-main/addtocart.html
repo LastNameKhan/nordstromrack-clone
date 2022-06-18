@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+</head>
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.top_offers {
+  background-color: #00819d;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  height: 30px;
+  width: 100%;
+}
+.leftbox {
+  /* border: 1px solid red; */
+  display: inline-block;
+}
+
+.leftbox ul {
+  display: flex;
+}
+
+.leftbox ul li:nth-child(1) {
+  margin-left: -20px;
+}
+
+.leftbox ul li {
+  list-style-type: none;
+  margin: 0 8px;
+  padding: 2%;
+}
+
+.leftbox ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+#nav {
+  width: 95%;
+  height: 151px;
+}
+
+.rightbox {
+  /* border: 1px solid red; */
+  width: 21%;
+  height: 22%;
+  margin-left: 85%;
+  position: relative;
+  top: -25%;
+  right: 1%;
+}
+
+.rightbox ul {
+  display: flex;
+}
+
+.rightbox ul li {
+  list-style-type: none;
+  margin: -3% 7% 0 0;
+}
+
+.rightbox ul li:nth-child(1) {
+  margin-left: 8%;
+}
+
+.rightbox ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.signIn:hover {
+  border: 1px solid blue;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.nav a {
+  color: #333;
+  /* margin-right: 5%; */
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+.nav > * {
+  color: red;
+}
+.banner {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+/* .banner > banner_img > img {
+  border: 1 px solid red;
+  margin: auto;
+  width: 90%;
+} */
+.makeitpara {
+  font-size: 700;
+  line-height: 24px;
+  font-size: 21px;
+  text-align: center;
+}
+.signInHomePage {
+  margin: auto;
+  padding: 8px;
+  border: 1px solid #00819d;
+  text-align: center;
+  width: 17%;
+  height: 50px;
+  color: #00819d;
+}
+
+#popup_container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+
+.popup_container_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  width: 360px;
+  height: 200px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popup_crose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+/* .signInHomePage :hover {
+  margin: auto;
+  padding: 5%;
+
+  height: 50px;
+  color: white;
+} */
+.signInHomePage:hover {
+  background-color: #00819d;
+  color: #fff;
+  padding: 5px;
+  height: 50px;
+}
+.footer {
+  height: 320px;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 3%;
+}
+
+.details {
+  height: 350px;
+  width: 100%;
+  /* border: 1px solid black; */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.first {
+  width: 100%;
+  margin-right: 10%;
+}
+
+.first li {
+  list-style-type: none;
+  margin: 12px -35px;
+}
+
+.first h6 {
+  margin: 2px 2px;
+  color: rgb(46, 45, 45);
+}
+
+.first li a {
+  text-decoration: none;
+  color: grey;
+  font-size: 13px;
+  /* margin-left: 5px; */
+}
+.download {
+  margin-left: 30px;
+  width: 350px;
+}
+
+.download h6 {
+  margin-left: 30px;
+  width: 300px;
+}
+
+#shopping_bag_main {
+    display: flex;
+    height: 50px;
+    width: 400px;
+    border: 1px solid rgb(187, 187, 187);
+    margin-left: 100px;
+    margin-top: 50px;
+}
+#shopping_bag_div {
+    background-color: #e3e3e3;
+    width: 200px;
+    text-align: center;
+    /* margin-top: 15px; */
+}
+#saved_for_later_div {
+text-align: center;
+width: 200px;
+}
+#shopping_bag_text {
+    font-size: 25px;
+    font-weight: 100;
+    margin-left: 100px;
+}
+#Items_in_your_bag {
+    color: rgb(69, 69, 69);
+    margin-left: 100px;
+    line-height: 1px;
+}
+#add_gifts {
+    margin-left: 100px;
+}
+#get_free_shipping_div {
+    height: 100px;
+    width: 1000px;
+    border: 10px solid rgb(235, 233, 233);
+    margin-left: 100px;
+    text-align: center;
+}
+#discount_on_shipping {
+    height: 18px;
+    width: 300px;
+    margin-left: 350px;
+    display: flex;
+}
+#discount_div1 {
+    background-color: #00819d;
+    height: 18px;
+    width: 250px;
+}
+#discount_div2 {
+    background-color: rgb(223, 221, 221);
+    height: 18px;
+    width: 50px;
+}
+#image {
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+#added_items_in_the_cart {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    height: fit-content;
+    width: 100px;
+}
+#div1 {
+    margin-left: 20px;
+    text-align: center;
+    line-height: 10px;
+}
+#title_from_local {
+    font-size: 10px;
+    color: grey;
+}
+#category_from_local {
+    font-size: 10px;
+    color: grey;
+}
+#fashion_from_local {
+    font-size: 10px;
+    color: grey;
+}
+#div1 {
+    margin-left: 100px;
+}
+#payment_details_main_div {
+    display: flex;
+    border: 1px solid black;
+    height: 200px;
+    width: 80%;
+    margin-top: 150px;
+    margin-left: 100px;
+}
+#payment_details_left_side_div {
+    border: 1px solid red;
+    height: 200px;
+    width: 50%;
+}
+#payment_details_rigth_side_div {
+    border: 1px solid purple;
+    height: 200px;
+    width: 50%;
+}
+#subtotal_div {
+    /* border: 1px solid cyan; */
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+#shipping_div {
+    /* border: 1px solid cyan; */
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+#Estimated_charges {
+    /* border: 1px solid cyan; */
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+#underline_after_the_div {
+    border: 0.1px solid rgb(224, 222, 222);
+    margin-top: 10px;
+}
+#estimated_total_div {
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+</style>
+<body>
+    <!-- Top ofeerrs section div -->
+    <div class="top_offers">
+        <span style="font-weight: 700">Clear the Rack!</span>
+        Free shipping over $89, or shop online and pick up select orders at a Nordstrom Rack or Nordstrom store. Learn More<span style="text-decoration: underline; font-weight: 700"
+          ></span
+        >
+      </div>
+  
+      <div id="nav">
+        <div class="leftbox">
+          <ul>
+            <li><img width="80px;" src="./img/logo.svg" alt="" /></li>
+          </ul>
+        </div>
+        <div class="rightbox">
+          <ul>
+            <li id="sign">
+              <a  href="./signin.html">Sign in</a>
+            </li>
+            <li>
+              
+              
+              <a href=""><i class="fas fa-shopping-bag"></i></a>
+            </li>
+          </ul>
+        </div>
+      <div class="nav">
+        <a style="color: red" href="">Clearance</i></a>
+        <a href="./product.html">Women</a>
+        <a href="./product.html">Men</a>
+        <a href="./product.html">Kids</a>
+        <a href="./product.html">Shoes</a><a href="./product.html">Bags & Accessories</a
+        ><a href="./index.html">Home</a><a href="">Beauty</a
+        ><a href="./product.html">Gifts</a
+        ><a style="color: #00819d" href="./product.html">Flash Events</a>
+      </div>
+      <div id="shopping_bag_main">
+          <div id="shopping_bag_div"><p>Shopping Bag(2)</p></div>
+          <div id="saved_for_later_div"><p id="saved_for_later_text">Saved for Later(0)</p></div>
+      </div>
+      <p id="shopping_bag_text">Shopping Bag</p>
+      <p id="Items_in_your_bag">Items in your bag are not on Hold</p>
+      <p id="add_gifts">Add a gift message when you check out.</p>
+      <div id="get_free_shipping_div">
+          <p>Get free shipping on orders over $89</p>
+          <div id="discount_on_shipping">
+              <div id="discount_div1"></div>
+              <div id="discount_div2"></div>
+          </div>
+      </div>
+      <div id="added_items_in_the_cart"></div>
+      <div id="payment_details_main_div">
+          <div id="payment_details_left_side_div">
+              <p>Accepted Payment Methods</p>
+              <svg width="24px" height="24px" focusable="false" class="_1ehMJ" role="img" title="Paypal Icon"><path d="M0 0h24v24H0z" fill="none"></path><image height="127" overflow="visible" transform="matrix(.12 0 0 .12 0 4.38)" width="200" xlink:href="data:image/jpeg;base64,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 hERKPGY2itPQVrZIUXmEe99R/9k="></image></svg>
+              <svg width="24" height="24" focusable="false" class="_1ehMJ" viewBox="0 0 40 38" role="img" title="After Pay Icon"><path d="M36.842 7.368H3.158A3.158 3.158 0 0 0 0 10.526v18.947a3.158 3.158 0 0 0 3.158 3.158h33.684A3.158 3.158 0 0 0 40 29.473V10.526a3.158 3.158 0 0 0-3.158-3.158z" fill="#b2fce4"></path><path d="m38.021 17.895-1.116-.642-1.116-.674a1.126 1.126 0 0 0-1.684.979v.137c0 .08.039.155.105.2l.526.295c.1.059.229.027.289-.073l.006-.011a.208.208 0 0 0 0-.105v-.337a.221.221 0 0 1 .21-.232h.126l1.053.6 1.053.589a.233.233 0 0 1 .074.316l-.074.074-1.052.589-1.053.6a.22.22 0 0 1-.304-.072l-.001-.002a.245.245 0 0 1 0-.126v-.168a1.127 1.127 0 0 0-1.684-.979l-1.137.653-1.116.642a1.137 1.137 0 0 0-.421 1.537c.097.178.243.324.421.421l1.116.642 1.137.642a1.126 1.126 0 0 0 1.684-.979v-.137a.242.242 0 0 0-.105-.2l-.526-.305a.211.211 0 0 0-.289.073l-.006.011a.253.253 0 0 0 0 .116v.337a.221.221 0 0 1-.21.232h-.001a.297.297 0 0 1-.126 0l-1.053-.6-1.053-.589a.232.232 0 0 1-.116-.295l.074-.074 1.053-.589 1.053-.6a.22.22 0 0 1 .304.072l.001.002a.245.245 0 0 1 0 .126v.168a1.127 1.127 0 0 0 1.684.979l1.137-.653L38 19.842c.525-.323.689-1.01.366-1.535l-.008-.012a1.053 1.053 0 0 0-.337-.4zM30.674 18.084l-2.621 5.411H27l.979-2.021-1.537-3.389h1.116l.989 2.263 1.053-2.263h1.074zM4.474 20a1.052 1.052 0 1 0 0 .052zm0 1.926v-.505a1.569 1.569 0 0 1-1.221.568 1.884 1.884 0 0 1-1.842-1.925V20a1.916 1.916 0 0 1 1.839-1.989h.003c.463-.003.904.202 1.2.558v-.484h.937v3.842h-.916zM10.021 21.053c-.337 0-.421-.126-.421-.442v-1.663h.6v-.832h-.6v-.968h-.968v.937H7.368v-.389c0-.316.126-.442.463-.442h.211v-.747h-.453c-.8 0-1.179.263-1.179 1.053v.516h-.536v.874h.537v3.011h.958V18.95h1.263v1.884c0 .789.295 1.126 1.053 1.126h.526v-.905h-.19zM13.495 19.653a.915.915 0 0 0-.958-.789.936.936 0 0 0-.968.789zm-1.916.6a.958.958 0 0 0 .989.895c.367.004.711-.183.905-.495h.989a1.885 1.885 0 0 1-1.916 1.337 1.895 1.895 0 0 1-2.021-1.758V20a1.99 1.99 0 1 1 3.979-.001V20a.98.98 0 0 1 0 .242zM20.695 20a1.053 1.053 0 1 0 0 .053zm-3.042 3.495v-5.411h.937v.495a1.569 1.569 0 0 1 1.221-.568c1.04.017 1.87.875 1.853 1.915V20a1.916 1.916 0 0 1-1.839 1.989h-.003a1.512 1.512 0 0 1-1.168-.516v2.021zM25.074 20a1.052 1.052 0 1 0-1.105 1.105h.053c.581 0 1.053-.471 1.053-1.053V20m-.001 1.926v-.505a1.535 1.535 0 0 1-1.211.568 1.885 1.885 0 0 1-1.853-1.915V20a1.916 1.916 0 0 1 1.839-1.989h.003c.46-.003.897.202 1.189.558v-.484h.947v3.842h-.914zM15.947 18.463a.959.959 0 0 1 .832-.453.927.927 0 0 1 .411.084v.989a1.21 1.21 0 0 0-.684-.179.673.673 0 0 0-.526.747v2.274H15v-3.842h.947z"></path></svg>
+              <svg width="24" height="23" focusable="false" class="_1ehMJ" viewBox="0 0 40 38" role="img" title="Visa Card Icon"><path d="M40 30.128c0 .82-.664 1.484-1.484 1.484H1.484A1.485 1.485 0 0 1 0 30.128V7.872c0-.819.664-1.484 1.484-1.484h37.033c.82 0 1.484.664 1.484 1.484v22.256z" fill="#1a1f71"></path><path d="m15.203 13.692-4.451 10.62H7.848l-2.189-8.475c-.135-.523-.25-.713-.654-.935-.662-.357-1.75-.693-2.712-.902l.067-.308h4.674c.596 0 1.132.398 1.267 1.083l1.157 6.147 2.858-7.23zm11.379 7.151c.013-2.801-3.876-2.954-3.848-4.207.008-.383.37-.787 1.164-.89.394-.052 1.479-.091 2.709.474l.482-2.251a7.39 7.39 0 0 0-2.57-.47c-2.715 0-4.627 1.444-4.643 3.511-.018 1.528 1.364 2.381 2.406 2.89 1.07.521 1.428.853 1.424 1.32-.007.713-.854 1.024-1.644 1.038-1.382.022-2.183-.373-2.823-.671l-.497 2.328c.641.294 1.828.55 3.056.565 2.887 0 4.775-1.429 4.784-3.637m7.17 3.469h2.542l-2.218-10.62H31.73c-.527 0-.972.307-1.17.778l-4.12 9.842h2.884l.572-1.586h3.525zm-3.065-3.763 1.447-3.988.832 3.988zm-11.558-6.857-2.273 10.62h-2.748l2.274-10.62z" fill="#fff"></path></svg>
+              <svg width="24" height="23" focusable="false" class="_1ehMJ uXBMZ" viewBox="0 0 40 38" role="img" title="American Express Card Icon"><defs></defs><g id="American_Express" data-name="American Express"><path class="nui-icon-xlarge-card-amex-1" d="M38.95 37.91h-38V0h38v37.91z"></path><path class="nui-icon-xlarge-card-amex-2" d="M37.52 26.82H25l-.8-1.07v1.07h-2.68v-1.61a4.53 4.53 0 0 1-1.16.18h-.45v1.43h-4l-.63-.89-.63.89H8.11v-6.26h6.53l.63.8.63-.8h23V0H1v15.38l1.34-3h2.55l.72 1.61v-1.65h3.21l.45 1.25.45-1.25h13.95V13a3.43 3.43 0 0 1 2-.63h4.29l.72 1.61v-1.64h2.59l.72 1.16v-1.16h2.77v6.26h-2.81l-.8-1.07v1.07H29.3l-.36-.89h-.8l-.36.89h-2.33a2.88 2.88 0 0 1-1.88-.54v.54h-3.93l-.8-1v1.07H4.35L4 17.79h-.8l-.36.89H1V38h38V26.38a2.7 2.7 0 0 1-1.43.45Z"></path><path class="nui-icon-xlarge-card-amex-2" d="M12.76 22.44v-1H9.09v4.47h3.67v-1h-2.5v-.8h2.41v-1h-2.42v-.72Zm3.58 3.4h1.43L16 23.6l1.79-2.24h-1.46l-1.07 1.34-1.07-1.34h-1.43l1.79 2.24-1.79 2.24h1.43l1.07-1.43 1.07 1.43Zm1.52-4.47v4.47H19v-1.43h1.34A1.48 1.48 0 0 0 22 22.89a1.46 1.46 0 0 0-1.52-1.52Zm3 1.52a.52.52 0 0 1-.54.54H19v-1h1.25c.36 0 .54.18.54.45m2.77 1.43H24l1.34 1.61h1.46l-1.43-1.61a1.43 1.43 0 0 0 1.16-1.43A1.39 1.39 0 0 0 25 21.46h-2.59v4.47h1.16v-1.61Zm1.25-1.88c.36 0 .54.18.54.45s-.18.45-.54.45h-1.23v-.89Zm5.72 0v-1h-3.65v4.47h3.67v-1H28v-.8h2.41v-1H28v-.72Zm2.86 2.41h-2.3v1h2.32a1.39 1.39 0 0 0 1.52-1.43c0-.8-.54-1.25-1.43-1.25h-1.07a.36.36 0 0 1 0-.72h2l.45-1h-2.36A1.39 1.39 0 0 0 31 22.89a1.29 1.29 0 0 0 1.43 1.34h1.07a.41.41 0 0 1 .45.36.77.77 0 0 1-.54.27m4.11 0H35.2v1h2.32A1.39 1.39 0 0 0 39 24.41c0-.8-.54-1.25-1.43-1.25h-1.03a.41.41 0 0 1-.45-.36c0-.27.18-.36.45-.36h2l.45-1h-2.36a1.39 1.39 0 0 0-1.52 1.43 1.29 1.29 0 0 0 1.43 1.34h1.07a.41.41 0 0 1 .45.36.77.77 0 0 1-.54.27M5 17.7h1.23l-1.88-4.47H2.83L1 17.7h1.21l.36-.89h2.05l.38.89Zm-2-1.87.63-1.52.63 1.52Zm5.64 1.87h1l1.16-3.31v3.31H12v-4.47h-1.84l-1 2.86-1-2.86H6.41v4.47h1.16v-3.3l1.07 3.3Zm7.78-3.49v-1h-3.66v4.49h3.67v-1h-2.5v-.8h2.41v-1h-2.42v-.72Zm1.7 1.88h.45l1.34 1.61h1.43l-1.43-1.61a1.43 1.43 0 0 0 1.16-1.43 1.39 1.39 0 0 0-1.52-1.43H17v4.47h1.16l-.09-1.61Zm1.25-1.88c.36 0 .54.18.54.45s-.18.45-.54.45h-1.25v-.89Zm2.15 3.49h1.16v-4.47h-1.16v4.47Zm3.76 0 .54-1h-.36a1.08 1.08 0 0 1-1.16-1.16v-.09a1 1 0 0 1 1.16-1.16h1.16v-1.06h-1.26a2 2 0 0 0-2.15 2.24v.09a2 2 0 0 0 2.06 2.15m4.65 0h1.25l-1.87-4.48h-1.52L25.9 17.7h1.25l.36-.89h2.06l.36.89Zm-2.06-1.88.63-1.52.63 1.52Zm6.35 1.88h1.34v-4.48H34.4V16l-1.79-2.77h-1.43v4.47h1.16v-2.86l1.88 2.86Z"></path></g></svg>
+              <svg width="24" height="23" focusable="false" class="_1ehMJ _1pVh0" viewBox="0 0 40 38" role="img" title="Mastercard Card Icon"><g fill-rule="nonzero" fill="none"><path d="M7.645 34.22v-2.04c.023-.348-.1-.688-.34-.936a1.17 1.17 0 0 0-.91-.357 1.222 1.222 0 0 0-1.118.578 1.161 1.161 0 0 0-1.051-.578 1.044 1.044 0 0 0-.931.483v-.401h-.692v3.25H3.3v-1.788a.773.773 0 0 1 .19-.62.737.737 0 0 1 .589-.244c.458 0 .691.306.691.857v1.81h.699V32.43a.776.776 0 0 1 .191-.618.74.74 0 0 1 .587-.246c.472 0 .698.306.698.857v1.81l.699-.015Zm10.333-3.251H16.84v-.986h-.699v.986h-.632v.646h.645v1.496c0 .755.286 1.204 1.105 1.204.305 0 .605-.087.864-.252l-.2-.605a1.257 1.257 0 0 1-.611.183c-.333 0-.46-.217-.46-.544v-1.482h1.132l-.007-.646Zm5.9-.082a.934.934 0 0 0-.838.476v-.394h-.685v3.25h.691v-1.822c0-.537.227-.837.666-.837.148-.002.294.026.432.082l.213-.68a1.45 1.45 0 0 0-.492-.088l.013.013Zm-8.92.34a2.337 2.337 0 0 0-1.297-.34c-.805 0-1.33.395-1.33 1.04 0 .531.386.858 1.097.96l.333.047c.379.055.559.157.559.34 0 .252-.253.395-.725.395a1.668 1.668 0 0 1-1.058-.34l-.333.55a2.26 2.26 0 0 0 1.377.422c.918 0 1.45-.442 1.45-1.06 0-.62-.419-.871-1.11-.973l-.333-.048c-.3-.04-.539-.102-.539-.32 0-.217.226-.38.605-.38.35.004.694.1.998.278l.306-.57Zm18.528-.34a.934.934 0 0 0-.838.476v-.394h-.685v3.25h.692v-1.822c0-.537.226-.837.665-.837.148-.002.295.026.432.082l.213-.68a1.45 1.45 0 0 0-.492-.088l.013.013Zm-8.913 1.7c-.017.462.158.91.48 1.234.323.323.765.493 1.216.466a1.64 1.64 0 0 0 1.144-.387l-.332-.571c-.24.186-.531.289-.832.292a1.035 1.035 0 0 1-.939-1.04c0-.544.409-.997.94-1.04.3.002.591.105.83.291l.333-.57a1.64 1.64 0 0 0-1.144-.388 1.587 1.587 0 0 0-1.215.467 1.662 1.662 0 0 0-.481 1.233v.013Zm6.479 0V30.97h-.692v.394a1.197 1.197 0 0 0-.998-.476c-.918 0-1.663.761-1.663 1.7 0 .94.745 1.7 1.663 1.7.388.015.76-.162.998-.476v.395h.692v-1.619Zm-2.575 0a.97.97 0 0 1 .996-.924c.522.02.933.464.925.998a.972.972 0 0 1-.956.967.944.944 0 0 1-.705-.305.989.989 0 0 1-.26-.736Zm-8.347-1.7c-.919.013-1.653.785-1.64 1.724.013.94.768 1.69 1.686 1.676.479.026.95-.132 1.32-.442l-.332-.523a1.493 1.493 0 0 1-.925.34.887.887 0 0 1-.95-.796h2.36v-.272c0-1.02-.618-1.7-1.51-1.7l-.01-.007Zm0 .633a.779.779 0 0 1 .562.224c.15.148.238.35.243.565h-1.663a.825.825 0 0 1 .844-.79h.014Zm17.33 1.074v-2.93h-.665v1.7a1.197 1.197 0 0 0-.998-.477c-.918 0-1.662.761-1.662 1.7 0 .94.744 1.7 1.662 1.7.389.015.76-.162.998-.476v.395h.665v-1.612Zm1.154 1.153a.326.326 0 0 1 .23.092.323.323 0 0 1 0 .456.332.332 0 0 1-.23.094.332.332 0 0 1-.299-.197.326.326 0 0 1 0-.251.332.332 0 0 1 .173-.17.326.326 0 0 1 .136-.024h-.01Zm0 .574a.232.232 0 0 0 .173-.074.256.256 0 0 0 0-.34.235.235 0 0 0-.27-.054.242.242 0 0 0-.079.054.256.256 0 0 0 0 .34.246.246 0 0 0 .186.074h-.01Zm.02-.404a.131.131 0 0 1 .087.027c.02.018.032.044.03.071a.083.083 0 0 1-.024.062.115.115 0 0 1-.07.03l.097.112h-.076l-.09-.112h-.03v.112h-.063v-.299l.14-.003Zm-.073.058v.081h.073a.068.068 0 0 0 .04 0 .035.035 0 0 0 0-.03.035.035 0 0 0 0-.031.068.068 0 0 0-.04 0l-.073-.02Zm-3.658-1.38a.97.97 0 0 1 .995-.925c.523.02.934.463.925.998a.972.972 0 0 1-.956.967.944.944 0 0 1-.705-.305.989.989 0 0 1-.26-.736Zm-23.357 0v-1.626h-.692v.394a1.197 1.197 0 0 0-.998-.476c-.918 0-1.663.761-1.663 1.7 0 .94.745 1.7 1.663 1.7.388.015.76-.162.998-.476v.395h.692v-1.612Zm-2.574 0a.97.97 0 0 1 .995-.925c.523.02.934.463.925.998a.972.972 0 0 1-.956.967.944.944 0 0 1-.71-.302.989.989 0 0 1-.26-.739h.006Z" fill="#231F20"></path><path fill="#FF5F00" d="M14.729 6.198h10.476v19.249H14.729z"></path><path d="M15.394 15.824c-.004-3.757 1.682-7.306 4.573-9.626-4.91-3.944-11.959-3.37-16.194 1.32-4.236 4.69-4.236 11.92 0 16.61 4.235 4.689 11.285 5.263 16.194 1.319-2.89-2.319-4.576-5.867-4.573-9.623Z" fill="#EB001B"></path><path d="M39.34 15.824c0 4.687-2.618 8.962-6.741 11.01-4.124 2.048-9.029 1.51-12.632-1.387 2.888-2.32 4.574-5.869 4.574-9.625 0-3.755-1.686-7.303-4.574-9.624 3.603-2.897 8.508-3.435 12.632-1.387 4.123 2.048 6.74 6.323 6.74 11.01v.003ZM38.194 23.398v-.387h.155v-.08h-.393v.08h.168v.387h.07Zm.764 0v-.467h-.12l-.138.334-.14-.334h-.105v.467h.086v-.35l.129.303h.09l.128-.303v.353l.07-.003Z" fill="#F79E1B"></path></g></svg>
+              <svg id="Layer_1" x="0" y="0" width="24" height="23" focusable="false" class="_1ehMJ _1noJl" viewBox="0 0 40 38"><path class="nui-icon-xlarge-card-discover-0" d="M39.9 5.5v26.7H.1V5.5c-.1 0 39.8-.2 39.8 0z"></path><path class="nui-icon-xlarge-card-discover-1" d="M39.7 21.4S29 28.9 9.5 32.3h30.2V21.4z"></path><path class="nui-icon-xlarge-card-discover-2" d="M4.1 15.1H2.4v5.6H4c.8 0 1.5-.2 2-.7.7-.6 1.1-1.3 1.1-2.2 0-1.5-1.3-2.7-3-2.7zm1.3 4.3c-.4.4-.8.5-1.5.5h-.4v-3.8h.4c.7 0 1.2.1 1.5.5.4.4.6.8.6 1.4-.1.5-.3 1-.6 1.4zm2.2-4.3h1.1v5.6H7.6v-5.6zm3.9 2.1c-.7-.2-.9-.4-.9-.7 0-.4.4-.6.8-.6s.6.1.9.5l.6-.7c-.5-.5-1.1-.6-1.6-.6-1.1 0-1.8.7-1.8 1.6 0 .8.4 1.2 1.4 1.5.5.1.7.2.8.4.2.1.4.4.4.6 0 .5-.4.8-.8.8-.6 0-.9-.2-1.2-.7l-.9.5c.5.7 1.2 1.1 2 1.1 1.2 0 2-.8 2-1.9-.1-.8-.4-1.3-1.7-1.8zm2 .7c0 1.6 1.3 2.9 3.1 2.9.5 0 .9-.1 1.4-.4v-1.3c-.5.5-.8.6-1.3.6-1.2 0-1.9-.8-1.9-2 0-1.1.8-2 1.9-2 .6 0 .9.2 1.4.6v-1.1c-.5-.2-.9-.4-1.4-.4-1.9.2-3.2 1.5-3.2 3.1zm13.2 1L25.1 15h-1.2l2.5 5.9h.6l2.5-5.9h-1.2l-1.6 3.9zm3.2 1.9h3.2v-.9h-2v-1.5h2v-.9h-2v-1.3h2v-.9h-3.2v5.5zm7.6-4c0-1.1-.7-1.6-2-1.6h-1.6v5.6H35v-2.2l1.5 2.2h1.4l-1.8-2.4c.9-.2 1.4-.7 1.4-1.6zm-2.3.9h-.4v-1.8h.4c.7 0 1.1.2 1.1.8 0 .7-.4 1-1.1 1z"></path><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="19.731" y1="29.337" x2="22.764" y2="34.589" gradientTransform="translate(0 -14)"><stop offset="0" style="stop-color:#d84f21"></stop><stop offset="0.279" style="stop-color:#de6124"></stop><stop offset="0.839" style="stop-color:#ec912b"></stop><stop offset="1" style="stop-color:#f1a02d"></stop></linearGradient><circle class="nui-icon-xlarge-card-discover-3" cx="21.2" cy="17.9" r="3.1"></circle><path d="M39.8 5.8v26.6H.2V5.8h39.6m.2-.3H0v27.1h40V5.5z"></path></svg>
+              <svg width="24" height="23" focusable="false" class="_1ehMJ _5rnU-" viewBox="0 0 40 38"><defs><linearGradient id="linear-gradient" x1="-4.27" y1="33.22" x2="0.36" y2="33.22" gradientTransform="matrix(2.67 0 0 -1.65 39.16 75.77)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#007f49"></stop><stop offset="0.29" stop-color="#209248"></stop><stop offset="0.76" stop-color="#50af47"></stop><stop offset="1" stop-color="#62ba46"></stop></linearGradient><linearGradient id="linear-gradient-2" x1="-7.02" y1="38.07" x2="-5.42" y2="38.07" gradientTransform="matrix(7.73 0 0 -18.79 82.01 734.45)" xlink:href="#linear-gradient"></linearGradient><linearGradient id="linear-gradient-3" x1="-3.88" y1="33.77" x2="1.16" y2="33.77" gradientTransform="matrix(2.45 0 0 -1.52 37.29 68.4)" xlink:href="#linear-gradient"></linearGradient><linearGradient id="linear-gradient-4" x1="-8.36" y1="38.07" x2="-6.76" y2="38.07" gradientTransform="matrix(7.73 0 0 -18.79 64.68 734.45)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#337"></stop><stop offset="0.07" stop-color="#2f397d"></stop><stop offset="0.69" stop-color="#0d66ad"></stop><stop offset="1" stop-color="#0077bf"></stop></linearGradient><linearGradient id="linear-gradient-5" x1="-7.69" y1="38.07" x2="-6.09" y2="38.07" gradientTransform="matrix(7.73 0 0 -18.79 73.35 734.45)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#743237"></stop><stop offset="0.4" stop-color="#aa263e"></stop><stop offset="0.8" stop-color="#da1c44"></stop><stop offset="1" stop-color="#ec1846"></stop></linearGradient></defs><g id="Mastercard"><g id="Archive_Logos_Card_JCB_Large" data-name="Archive/Logos/Card/JCB/Large"><g id="card_jcb_large" data-name="card jcb large"><path id="Shape" class="nui-icon-xlarge-card-jcb-1" d="M30.11 22.24h3.23a1.32 1.32 0 0 0 0-2.58h-3.23Z"></path><path id="Shape-2" data-name="Shape" class="nui-icon-xlarge-card-jcb-2" d="M32.67 4a5 5 0 0 0-5 5v5.19h7.57c1.6.08 2.78.9 2.78 2.33a2.37 2.37 0 0 1-2.28 2.29v.06c1.62.11 2.87 1 2.87 2.42s-1.36 2.5-3.18 2.5h-7.76V34H35a5 5 0 0 0 5-5V4Z"></path><path id="Shape-3" data-name="Shape" class="nui-icon-xlarge-card-jcb-3" d="M34 16.9a1.19 1.19 0 0 0-1-1.2h-2.89v2.43h2.91A1.18 1.18 0 0 0 34 16.9Z"></path><path id="Shape-4" data-name="Shape" class="nui-icon-xlarge-card-jcb-4" d="M5 4a5 5 0 0 0-5 5v12.35a10 10 0 0 0 4.33 1.12A2.41 2.41 0 0 0 7 20v-5.8h4.3V20c0 2.27-1.39 4.09-6.17 4.09A21.47 21.47 0 0 1 0 23.46V34h7.33a5 5 0 0 0 5-5V4Z"></path><path id="Shape-5" data-name="Shape" class="nui-icon-xlarge-card-jcb-5" d="M13.83 9v6.55c1.27-1.09 3.46-1.76 7-1.61a22.83 22.83 0 0 1 3.93.6v2.12A9.78 9.78 0 0 0 21 15.55c-2.7-.21-4.33 1.11-4.33 3.45s1.63 3.66 4.33 3.45a10 10 0 0 0 3.79-1.1v2.11a22.92 22.92 0 0 1-3.93.6c-3.56.16-5.75-.52-7-1.61V34h7.33a5 5 0 0 0 5-5V4h-7.36a5 5 0 0 0-5 5Z"></path></g></g></g></svg>
+              <svg width="24" height="23" focusable="false" class="_1ehMJ" viewBox="0 0 40 38"><defs></defs><g id="Visa"><path class="nui-icon-xlarge-card-union-pay-1" d="M7.84 6.49h10A2 2 0 0 1 19.75 9l-4.64 20A3.39 3.39 0 0 1 12 31.51H2A1.94 1.94 0 0 1 .07 29L4.72 9a3.38 3.38 0 0 1 3.12-2.51"></path><path class="nui-icon-xlarge-card-union-pay-2" d="M17 6.49h11.47c1.39 0 .77 1.14.44 2.54L24.26 29c-.33 1.39-.22 2.53-1.62 2.53H11.16A1.94 1.94 0 0 1 9.23 29l4.64-20A3.39 3.39 0 0 1 17 6.49"></path><path class="nui-icon-xlarge-card-union-pay-3" d="M28 6.49h10A1.94 1.94 0 0 1 39.93 9l-4.65 20a3.39 3.39 0 0 1-3.12 2.53h-10A1.94 1.94 0 0 1 20.25 29L24.9 9A3.39 3.39 0 0 1 28 6.49"></path><path class="nui-icon-xlarge-card-union-pay-4" d="M26.35 25.26h.94l.27-.91h-.94Zm.75-2.5-.32 1.07a4.51 4.51 0 0 1 .55-.24 4.8 4.8 0 0 1 .49-.08l.23-.75Zm.47-1.54-.31 1a5.06 5.06 0 0 1 .54-.22 3.26 3.26 0 0 1 .48-.07l.23-.75Zm2.08 0-1.22 4h.33l-.25.83h-.33l-.08.26h-1.15l.08-.26h-2.36l.24-.77h.24l1.23-4.09.25-.82h1.18l-.12.42a2.19 2.19 0 0 1 .61-.3c.3-.08 2-.11 2-.11l-.25.82Z"></path><path class="nui-icon-xlarge-card-union-pay-5" d="M30.17 20.4h1.26v.47c0 .08.06.12.21.12h.26l-.24.78H31c-.59 0-.81-.21-.8-.5ZM30.34 24.09h-1.2l.21-.69h1.37l.2-.63h-1.37l.23-.78h3.77l-.24.78h-1.25l-.2.63h1.27l-.21.69h-1.37l-.24.29h.56l.14.87a.46.46 0 0 0 0 .18.69.69 0 0 0 .29 0h.17l-.26.85h-.73a.8.8 0 0 1-.31-.13.41.41 0 0 1-.22-.3l-.1-.85-.62.86a1.06 1.06 0 0 1-.92.48h-.87l.23-.75H29a.55.55 0 0 0 .24-.07.38.38 0 0 0 .18-.15ZM17.17 22.19h3.18l-.23.76h-1.27l-.2.65H20l-.24.78h-1.3l-.32 1.05c0 .12.31.13.43.13l.65-.09-.26.87h-1.5a1.36 1.36 0 0 1-.33 0 .35.35 0 0 1-.23-.17.33.33 0 0 1-.08-.34l.42-1.4h-.72l.24-.8h.73l.19-.65h-.72ZM19.32 20.83h1.31l-.24.79H18.6l-.19.17c-.08.08-.11 0-.22.11a1.31 1.31 0 0 1-.59.15H17l.23-.76h.17a.61.61 0 0 0 .29 0 .7.7 0 0 0 .19-.25l.33-.59h1.3Z"></path><path class="nui-icon-xlarge-card-union-pay-4" d="M21.82 22.14a2.05 2.05 0 0 1 1-.43h1l.13-.43h-1.86Zm1.72.33h-1.82l-.11.37h1.58a1.32 1.32 0 0 1 .24 0Zm-2.36-2.07h1.11l-.16.56a3.29 3.29 0 0 1 .6-.38 5.49 5.49 0 0 1 .8-.18h1.8l-.61 2a2.36 2.36 0 0 1-.3.68.76.76 0 0 1-.3.28 1.18 1.18 0 0 1-.42.14h-2.29l-.49 1.62c0 .16-.07.24 0 .28a.2.2 0 0 0 .17.08l.76-.07-.26.88h-1.51a.69.69 0 0 1-.36-.07c-.08-.07-.2-.16-.2-.26a3.26 3.26 0 0 1 .1-.43Z"></path><path class="nui-icon-xlarge-card-union-pay-5" d="m24.42 23.7-.1.49a.68.68 0 0 1-.2.37.8.8 0 0 1-.6.21h-.62v.55c0 .16 0 .14.06.17a.21.21 0 0 0 .08 0h.79l-.24.81h-.68a2.17 2.17 0 0 1-.94-.1c-.11-.07-.13-.16-.13-.32v-2.16H23v.44h.26a.37.37 0 0 0 .18 0 .22.22 0 0 0 .07-.11l.1-.35ZM8.94 12.87c0 .17-.73 3.37-.73 3.37a2.35 2.35 0 0 1-.63 1.41 1.12 1.12 0 0 1-.74.26.68.68 0 0 1-.76-.65v-.16l.14-.87s.73-2.91.86-3.3a11.3 11.3 0 0 1-1.68 0v.21l-.74 3.28-.07.28-.12.91a1.34 1.34 0 0 0 .16.68c.34.59 1.3.68 1.85.68a3.59 3.59 0 0 0 1.81-.42 2.68 2.68 0 0 0 1.11-1.88l.08-.33s.75-3 .88-3.42a11.52 11.52 0 0 1-1.42 0M13.09 18.87h-1.27l.16-.67.07-.31c.11-.48.21-1 .23-1.2s0-.35-.25-.35a.93.93 0 0 0-.38.12c-.07.25-.21 1-.28 1.29-.14.68-.15.76-.22 1.1H9.86c.1-.41.2-.81.29-1.22a18.11 18.11 0 0 0 .38-2.08c.58-.08.72-.1 1.35-.22l.05.06-.1.35.32-.18a2 2 0 0 1 .81-.19.68.68 0 0 1 .7.39c.12.28 0 .63-.12 1.32l-.08.35c-.16.77-.19.91-.28 1.43ZM15.2 18.87H13.86a4.09 4.09 0 0 1 .16-.5 3.86 3.86 0 0 0 .14-.5c.09-.38.14-.65.18-.89s.06-.42.09-.65l.69-.1.71-.13v.05l-.17.72-.17.72c-.11.51-.16.69-.18.83s0 .2-.08.46ZM18.4 17.09a2.63 2.63 0 0 1-.29.82.48.48 0 0 1-.38.24s-.29 0-.29-.37a2.35 2.35 0 0 1 .08-.57c.13-.58.29-1.08.69-1.08s.33.36.2 1m1.31.06c.18-.77 0-1.13-.13-1.35a1.47 1.47 0 0 0-1.2-.44 2.2 2.2 0 0 0-1.51.52 2.48 2.48 0 0 0-.67 1.3c-.11.47-.23 1.32.55 1.64a2.32 2.32 0 0 0 .81.13 2.12 2.12 0 0 0 1.6-.63 2.79 2.79 0 0 0 .55-1.18M32 18.92h-1.34c.15-.58.31-1.15.44-1.73a13.53 13.53 0 0 0 .27-1.52c.6-.09.77-.11 1.4-.23v.05c-.11.47-.23.95-.34 1.42-.23 1-.32 1.5-.4 2Z"></path><path class="nui-icon-xlarge-card-union-pay-5" d="M31.07 17.15a2.8 2.8 0 0 1-.3.82.69.69 0 0 1-.49.24s-.29 0-.29-.36a2.63 2.63 0 0 1 .08-.57c.13-.57.29-1.06.69-1.06s.45.35.31.94m1.2.06c.18-.77-.53-.07-.65-.32s-.06-1.2-.76-1.46a1.68 1.68 0 0 0-1.44.52 2.46 2.46 0 0 0-.67 1.29c-.11.47-.23 1.32.55 1.62a1.56 1.56 0 0 0 .7.13c.78 0 1.38-1.22 1.82-1.69s.4.14.45-.09M23.14 18.87h-1.26c0-.22.11-.45.16-.67l.07-.31c.11-.48.21-1 .23-1.2s0-.35-.24-.35a.92.92 0 0 0-.38.12c-.07.25-.22 1-.29 1.29-.14.68-.15.76-.22 1.1h-1.29l.29-1.22a17.74 17.74 0 0 0 .38-2.08c.58-.08.72-.1 1.35-.22v.06l-.09.35.32-.18a2 2 0 0 1 .8-.19.69.69 0 0 1 .71.39c.12.28 0 .63-.12 1.32l-.08.35c-.16.77-.19.91-.28 1.43ZM27.49 12.86h-2.12v.22l-.39 1.8-1 4h1.5l.26-1.25s.19-.79.2-.82a.45.45 0 0 1 .12-.11h.09a4 4 0 0 0 2.46-.53 2.61 2.61 0 0 0 1-1.56 2.39 2.39 0 0 0 .07-.54 1.12 1.12 0 0 0-.2-.69c-.37-.52-1.1-.53-2-.53m.52 1.89a1.31 1.31 0 0 1-.68.9 2.15 2.15 0 0 1-1 .15h-.22v-.09l.41-1.79v-.16h.16l.87.07a.71.71 0 0 1 .38.91M36.95 15.38v-.05c-.62.12-.73.15-1.3.22-.43 1-.41.77-.76 1.54v-.1l-.09-1.67-.05-.05c-.65.12-.66.15-1.26.22a.46.46 0 0 0 0 .07 7.56 7.56 0 0 1 .13.9c0 .3.08.6.11.89.06.49.1.73.17 1.48-.4.67-.5.92-.89 1.51v.05h1.15l.1-.11c.33-.7 2.82-5 2.82-5M15.75 15.79c.33-.23.37-.55.09-.72a1.14 1.14 0 0 0-1.11.12c-.34.23-.37.55-.09.72a1.15 1.15 0 0 0 1.11-.12M34.08 20.42l-.49.84a1 1 0 0 1-.89.5h-.78l.23-.75h.15a.41.41 0 0 0 .18 0 .22.22 0 0 0 .1-.09l.28-.46Z"></path></g></svg>
+              <p>Need help? Call 1.888.966.6283 or chat with us</p>
+              <p>*Pricing and Promotion details.See more.</p>
+          </div>
+          <div id="payment_details_rigth_side_div">
+              <div id="subtotal_div">
+                  <p>Subtotal</p>
+                  <p id="subtotal_charges">0</p>
+              </div>
+              <div id="shipping_div">
+                  <p>Shipping Charges</p>
+                  <p>0</p>
+              </div>
+              <div id="Estimated_charges">
+                  <p>Estimated tax</p>
+                  <p>0</p>
+              </div>
+              <div id="underline_after_the_div"></div>
+              <div id="estimated_total_div">
+                <p>Estimated total</p>
+                <p id="cart_total">0</p>
+            </div>
+            <p>or 4 interest-free payments of $24.23 with<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="104" height="36" viewBox="14 12 76 12">
+                <path class="afterpay-logo-badge-background" fill="#b2fce4" d="m86.00173,35.9321l-68.00064,0c-9.90375,0 -17.93101,-8.02726 -17.93101,-17.93101l0,0c0,-9.90375 8.02726,-17.93101 17.93101,-17.93101l68.00064,0c9.90375,0 17.931,8.02726 17.931,17.93101l0,0c0.00652,9.89724 -8.02725,17.93101 -17.931,17.93101z"></path>
+                <g class="afterpay-logo-badge-lockup">
+                  <path d="m88.23074,13.52071l-2.25928,-1.29288l-2.29193,-1.31247c-1.51489,-0.86845 -3.40851,0.22201 -3.40851,1.97197l0,0.29384c0,0.16324 0.08489,0.31342 0.22854,0.39178l1.06435,0.60726c0.29383,0.16978 0.6595,-0.0457 0.6595,-0.38525l0,-0.69868c0,-0.34607 0.37219,-0.56155 0.67256,-0.39178l2.0895,1.20147l2.08298,1.19493c0.30037,0.16977 0.30037,0.60727 0,0.77704l-2.08298,1.19494l-2.0895,1.20146c-0.30037,0.16978 -0.67256,-0.0457 -0.67256,-0.39178l0,-0.34607c0,-1.74997 -1.89362,-2.84696 -3.40851,-1.97198l-2.29193,1.31247l-2.25928,1.29289c-1.52142,0.87498 -1.52142,3.07549 0,3.95047l2.25928,1.29289l2.29193,1.31247c1.51489,0.86845 3.40851,-0.22201 3.40851,-1.97198l0,-0.29383c0,-0.16325 -0.08489,-0.31343 -0.22854,-0.39179l-1.06435,-0.60726c-0.29383,-0.16977 -0.6595,0.04571 -0.6595,0.38525l0,0.69868c0,0.34608 -0.37219,0.56156 -0.67256,0.39179l-2.0895,-1.20147l-2.08298,-1.19494c-0.30037,-0.16977 -0.30037,-0.60726 0,-0.77703l2.08298,-1.19494l2.0895,-1.20147c0.30037,-0.16977 0.67256,0.04571 0.67256,0.39179l0,0.34607c0,1.74996 1.89362,2.84695 3.40851,1.97197l2.29193,-1.31247l2.25928,-1.29288c1.52142,-0.88151 1.52142,-3.0755 0,-3.95048z"></path>
+                  <path d="m73.4083,13.95167l-5.28907,10.92421l-2.19398,0l1.9785,-4.08107l-3.11467,-6.84314l2.25275,0l1.99809,4.58386l2.18092,-4.58386l2.18746,0z"></path>
+                  <path d="m20.52416,17.83032c0,-1.30594 -0.9468,-2.2201 -2.10909,-2.2201s-2.1091,0.93375 -2.1091,2.2201c0,1.2733 0.94681,2.2201 2.1091,2.2201s2.10909,-0.91416 2.10909,-2.2201m0.01959,3.87865l0,-1.00558c-0.57461,0.69868 -1.43,1.12964 -2.44864,1.12964c-2.12869,0 -3.74152,-1.70425 -3.74152,-4.00271c0,-2.27887 1.67813,-4.01577 3.78723,-4.01577c0.99251,0 1.82832,0.43749 2.40293,1.11658l0,-0.97946l1.90668,0l0,7.7573l-1.90668,0z"></path>
+                  <path d="m31.72262,19.98513c-0.66603,0 -0.85539,-0.24813 -0.85539,-0.9011l0,-3.44116l1.22758,0l0,-1.6912l-1.22758,0l0,-1.89361l-1.95239,0l0,1.89361l-2.52047,0l0,-0.7705c0,-0.65297 0.24813,-0.9011 0.93375,-0.9011l0.43096,0l0,-1.50184l-0.94027,0c-1.61284,0 -2.37682,0.52891 -2.37682,2.14175l0,1.03822l-1.08393,0l0,1.68467l1.08393,0l0,6.0661l1.95238,0l0,-6.0661l2.52047,0l0,3.80029c0,1.58019 0.60727,2.26581 2.18746,2.26581l1.00557,0l0,-1.72384l-0.38525,0z"></path>
+                  <path d="m38.73553,17.13164c-0.13713,-1.00557 -0.95987,-1.61284 -1.92627,-1.61284c-0.95986,0 -1.75649,0.58768 -1.95238,1.61284l3.87865,0zm-3.89824,1.208c0.13712,1.14923 0.95987,1.8022 2.00462,1.8022c0.82275,0 1.45613,-0.38525 1.82832,-1.00558l2.00462,0c-0.46361,1.64549 -1.93932,2.69677 -3.87865,2.69677c-2.34416,0 -3.98965,-1.64548 -3.98965,-3.98965c0,-2.34417 1.7369,-4.03536 4.03536,-4.03536c2.31152,0 3.98965,1.70425 3.98965,4.03536c0,0.16977 -0.01305,0.33955 -0.0457,0.49626l-5.94857,0z"></path>
+                  <path d="m53.26414,17.83032c0,-1.2537 -0.94681,-2.2201 -2.1091,-2.2201c-1.16229,0 -2.1091,0.93375 -2.1091,2.2201c0,1.2733 0.94681,2.2201 2.1091,2.2201c1.16229,0 2.1091,-0.95986 2.1091,-2.2201m-6.14446,7.04556l0,-10.92421l1.90667,0l0,1.00558c0.57462,-0.71174 1.43001,-1.14923 2.44865,-1.14923c2.09603,0 3.74152,1.72384 3.74152,4.00271s-1.67814,4.01578 -3.78723,4.01578c-0.97946,0 -1.78261,-0.38526 -2.34417,-1.03823l0,4.08107l-1.96544,0l0,0.00653z"></path>
+                  <path d="m62.09231,17.83032c0,-1.30594 -0.94681,-2.2201 -2.1091,-2.2201c-1.16229,0 -2.1091,0.93375 -2.1091,2.2201c0,1.2733 0.94681,2.2201 2.1091,2.2201c1.16229,0 2.1091,-0.91416 2.1091,-2.2201m0.01959,3.87865l0,-1.00558c-0.57462,0.69868 -1.43001,1.12964 -2.44865,1.12964c-2.12868,0 -3.74152,-1.70425 -3.74152,-4.00271c0,-2.27887 1.67813,-4.01577 3.78723,-4.01577c0.99252,0 1.82832,0.43749 2.40294,1.11658l0,-0.97946l1.90667,0l0,7.7573l-1.90667,0z"></path>
+                  <path d="m43.67852,14.70912s0.4832,-0.9011 1.67814,-0.9011c0.50931,0 0.8358,0.1763 0.8358,0.1763l0,1.97851s-0.71827,-0.44402 -1.37777,-0.35261c-0.6595,0.09142 -1.0774,0.69215 -1.0774,1.50184l0,4.59038l-1.97197,0l0,-7.75076l1.90667,0l0,0.75744l0.00653,0z"></path>
+                </g>
+              </svg></p>
+          </div>
+      </div>
+      <div class="footer">
+        <div class="details">
+            <div class="first">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Guest Returns</a></li>
+                    <li><a href="#">Shipping & Return Policy</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="">Nordstrom Blog</a></li>
+                </ul>
+            </div>
+            <div class="first">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">About Our Brand</a></li>
+                    <li><a href="#">The Nordy Club</a></li>
+                    <li><a href="#">Store Locator</a></li>
+                    <li><a href="#">All Brands</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Get Email Updates</a></li>
+                    <li><a href="">Nordstrom Blog</a></li>
+                </ul>
+            </div>
+            <div class="first">
+                <h3>Nordstrom Rack & The Community</h3>
+                <ul>
+                    <li><a href="#">Corporate Social Responsibility</a></li>
+                    <li><a href="#">Diversity, Inclusion & Belonging</a></li>
+                    <li><a href="#">Big Brothers Big Sisters</a></li>
+                    <li><a href="#">Donate Clothes</a></li>
+                    
+                </ul>
+            </div>
+            <div class="first">
+                <h3>Nordstrom Card</h3>
+                <ul>
+                    <li><a href="#">Apply for a Nordstrom Card</a></li>
+                    <li><a href="#">Pay My Bill</a></li>
+                    <li><a href="#">Manage my Nordstrom Card</a></li>
+                    
+                </ul>
+            </div>
+            <div class="first">
+                <h3>Nordstrom, Inc.</h3>
+                <ul>
+                    <li><a href="#">Nordstrom</a></li>
+                    <li><a href="#">Nordstrom Canada</a></li>
+                    <li><a href="#">Trunk Club</a></li>
+                    <li><a href="#">HauteLook</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    
+                </ul>
+            </div>
+</body>
+</html>
+<script>
+    var getcart = JSON.parse(localStorage.getItem("cartItems"));
+display(getcart);
+function display(getcart) {
+  document.getElementById("added_items_in_the_cart").innerHTML = null;
+  getcart.map(function (elem, index) {
+    let div = document.createElement("div");
+    let div1 = document.createElement("div");
+    div1.setAttribute("id","div1")
+    let image = document.createElement("img");
+    image.src = elem.imageA;
+    image.setAttribute("id", "image");
+    let title = document.createElement("p");
+    title.innerText = elem.title;
+    title.setAttribute("id","title_from_local")
+    let category = document.createElement("p")
+    category.innerText = elem.category;
+    category.setAttribute("id","category_from_local")
+    let fashion = document.createElement("p")
+    fashion.innerText = elem.fashionChoice;
+    fashion.setAttribute("id","fashion_from_local")
+    let price = document.createElement("p");
+    price.innerText = elem.price;
+    price.setAttribute("id","price_from_local")
+    let remove = document.createElement("button");
+    remove.innerText = "Remove";
+    remove.addEventListener("click", function () {
+      rem(index);
+    });
+    div.append(image);
+    div1.append(title,category,fashion,price,remove)
+    document.getElementById("added_items_in_the_cart").append(div,div1);
+  });
+  let total = 0;
+  for (let i = 0; i < getcart.length; i++) {
+    total = total + getcart[i].price;
+  }
+  let totalvalue = document.getElementById("cart_total");
+  totalvalue.innerText = total;
+  function rem(index) {
+    let newprice = document.getElementById("cart_total");
+    total = total - getcart[index].price;
+    newprice.innerText = total;
+    getcart.splice(index,1)
+    localStorage.setItem("cartItems",JSON.stringify(getcart))
+    display(getcart)
+  }
+}
+
+</script>
