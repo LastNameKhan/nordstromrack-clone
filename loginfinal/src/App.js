@@ -8,11 +8,12 @@ import MyAccount from "./components/MyAccount";
 function App() {
   return (
     <div className="App">
-      <Routes>
+      {/* <Routes>
         <Route path="/registration" element={<Registration />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/myaccount" element={<MyAccount />}></Route>
-      </Routes>
+      </Routes> */}
+      <MyAccount />
     </div>
   );
 }

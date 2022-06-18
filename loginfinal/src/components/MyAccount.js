@@ -9,26 +9,22 @@ import {
   BreadcrumbSeparator,
   Center,
 } from "@chakra-ui/react";
-
+import { CheckIcon } from "@chakra-ui/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-  faHouse,
-  faHouseChimney,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 
 const MyAccount = () => {
   const [lastname, setLastName] = useState([]);
   const [firstname, setFirstName] = useState([]);
   const [email, setEmail] = useState([]);
   useEffect(() => {
-    const email = JSON.parse(localStorage.getItem("Email"))
+    const email = JSON.parse(localStorage.getItem("Email"));
     const lastname = JSON.parse(localStorage.getItem("lastname"));
     const firstname = JSON.parse(localStorage.getItem("firstname"));
     if (firstname || lastname) {
       setFirstName(firstname);
       setLastName(lastname);
-      setEmail(email)
+      setEmail(email);
     }
   }, []);
 
@@ -40,10 +36,7 @@ const MyAccount = () => {
           <Breadcrumb fontSize="15px">
             <BreadcrumbItem>
               <BreadcrumbLink href="#">
-                <FontAwesomeIcon
-                  icon={faHouseChimney}
-                  className="fontawesomehouseicon"
-                ></FontAwesomeIcon>
+                <i class="fa-solid fa-house-chimney"></i>
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -65,10 +58,7 @@ const MyAccount = () => {
         </Center>
         <Center h="50px" color="black" className="topthirdtextmyaccount">
           <h3>
-            <FontAwesomeIcon
-              className="tickarrow"
-              icon={faCheck}
-            ></FontAwesomeIcon>
+          <i class="fa-solid fa-check"></i>
             No order has been made yet.
           </h3>
         </Center>
@@ -115,11 +105,13 @@ const MyAccount = () => {
           LOG OUT
         </Box>
         <Center h="50px" color="black" className="bottomnamediv">
-          <h3 className="boldtagname">Name :</h3><span>{firstname}</span>
+          <h3 className="boldtagname">Name :</h3>
+          <span>{firstname}</span>
         </Center>
         <div className="bordergreyafterdiv"></div>
         <Center h="50px" color="black" className="bottomnamediv1">
-          <h3 className="boldtagname">Email :</h3><span>{email}</span>
+          <h3 className="boldtagname">Email :</h3>
+          <span>{email}</span>
         </Center>
         <div className="bordergreyafterdiv"></div>
         <Center h="50px" color="black" className=".bottomnamediv">
